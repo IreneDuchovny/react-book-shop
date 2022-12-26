@@ -57,7 +57,7 @@ function _createBooks() {
           "authors": [
             "Barbara Cartland"
           ],
-          "publishedDate": 1999,
+          "publishedDate": 2021,
           "description": "placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse",
           "pageCount": 713,
           "categories": [
