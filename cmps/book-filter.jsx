@@ -40,11 +40,7 @@ export function BookFilter({ onSetFilter }) {
                 onChange={handleChange}
             />
 
-            {/* <button >Search</button> */}
-
-            {/* <input type="text" name="title" placeholder="Search by title" onChange={handleChange} />
-        <input type="number" name="minPrice" placeholder="Min Price" onChange={handleChange} />
-        <input type="number" name="maxPrice" placeholder="Max Price" onChange={handleChange} /> */}
+       
         </form>
     </section>
 }

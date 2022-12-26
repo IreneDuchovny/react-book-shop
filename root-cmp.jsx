@@ -1,31 +1,39 @@
+const Router = ReactRouterDOM.HashRouter
+const { Route, Routes } = ReactRouterDOM
+
 import { HomePage } from './pages/home.jsx'
 import { AboutUs } from './pages/about-us.jsx'
 import { BookIndex } from './pages/book-index.jsx'
+import { AppHeader } from './pages/app-header.jsx'
+import { BookDetails } from './pages/book-details.jsx'
+import { BookEdit } from './pages/book-edit.jsx'
+import {AddReview} from './cmps/add-book-review.jsx'
 
-const { useState } = React
+// const { useState } = React
 
 export function App() {
 
-    const [page, setPage] = useState('home')
-    console.log('page is', page)
+    // const [page, setPage] = useState('home')
+    // console.log('page is', page)
 
-    return <section className="app">
-        <header className="app-header">
-            <h1>
-                <a href="#" onClick={() => setPage('home')}>
-                   Miss Books</a></h1>
-            <nav className="app-nav">
-                <a href="#" onClick={() => setPage('home')}>Home</a> | 
-                <a href="#" onClick={() => setPage('about')}>About</a> |
-                <a href="#" onClick={() => setPage('book')}>Books</a>
-            </nav>
-        </header>
-        <main>
+    return <Router>
+        <section className="app">
+            <AppHeader />
+            <main>
+                <Routes>
+                    <Route element={<HomePage />} path="/" />
+                    <Route element={<AboutUs />} path="/about" />
+                    <Route element={<BookIndex />} path="/book" />
 
-            {page === 'home' && <HomePage setPage={setPage} />}
-            {page === 'about' && <AboutUs />}
-            {page === 'book' && <BookIndex />}
-
-        </main>
-    </section>
+                    <Route element={<BookDetails />} path="/book/:bookId" >
+                        <Route element={<AddReview />} path="/book/:bookId/review" />
+                    </Route>
+                    <Route element={<BookEdit />} path="/book/edit" />
+                        {/* {page === 'home' && <HomePage setPage={setPage} />} */}
+                        {/* {page === 'about' && <AboutUs />}
+            {page === 'book' && <BookIndex />} */}
+                </Routes>
+            </main>
+        </section>
+    </Router>
 }

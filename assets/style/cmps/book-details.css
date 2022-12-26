@@ -1,5 +1,6 @@
 .book-details{
 padding: 20px;
+align-items: top;
     /* font-size: 1.25em; */
 }
 
@@ -12,7 +13,10 @@ padding: 20px;
 .book-det-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
+    /* align-self: center; */
+    /* justify-content: space-between; */
     margin: 40px;
 }
 
@@ -33,4 +37,12 @@ font-size: 0.8em;
 
 h2 {
     color: var(--clr4bg);
+}
+
+.details-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
 }
